@@ -17,7 +17,7 @@ export default function ensureAuthenticate(
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
-    throw new Error('Token not provide', 401);
+    throw new AppError('Token not provide', 401);
   }
 
   const [, token] = authHeader.split(' ');
