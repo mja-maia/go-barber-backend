@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import AppError from './errors/AppError';
 import routes from './routes';
 import uploadConfig from './config/upload';
@@ -9,7 +10,7 @@ import './database';
 
 const app = express();
 app.use(cors());
-
+dotenv.config();
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.directory));
 app.use(routes);
@@ -26,6 +27,6 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.listen(3333, () => {
-  console.log('list on port 3333');
+app.listen(process.env.PORT || 3333, () => {
+  console.log(`list on port ${process.env.PORT || 3333}`);
 });
