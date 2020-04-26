@@ -1,16 +1,12 @@
 {
   "type": "postgres",
-  "host": "localhost",
+  "host": "ec2-52-23-14-156.compute-1.amazonaws.com",
   "port": 5432,
-  "username": "postgres",
-  "password": "docker",
-  "database": "gostack_gobarber",
-  "entities": [
-    "./src/models/*.ts"
-  ],
-  "migrations": [
-    "./src/database/migrations/*.ts"
-  ],
+  "username": "gjgqrqlkwurdli",
+  "password": "32b5054419b7146142b9fd2b5758177483704caa51ccb4faee117258e734df7a",
+  "database": "d5aoldi316mlbr",
+  "entities": ["./src/models/*.ts"],
+  "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
   }
